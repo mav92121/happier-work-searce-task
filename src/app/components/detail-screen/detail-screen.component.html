@@ -1,0 +1,56 @@
+<div class="flex main">
+  <app-sidebar-layout></app-sidebar-layout>
+  <div class="flex-col">
+    <app-header-layout></app-header-layout>
+    <div class="dashboard">
+      <div class="nav">
+        <button class="back_button" nz-button nzType="primary">
+          <mat-icon class="arrow_back">arrow_back</mat-icon>
+        </button>
+        <h2 class="heading text_dark_blue">{{ project.name }}</h2>
+      </div>
+      <div class="search">
+        <div class="input_container">
+          <mat-icon class="search_icon">search</mat-icon>
+          <input placeholder="Search by name" class="search_box" />
+        </div>
+        <div class="select_container">
+          <select>
+            <option *ngFor="let column of colomnData" value="{{ column.key }}">
+              {{ column.name }}
+            </option>
+          </select>
+        </div>
+        <div>
+          <button class="create_button" nz-button nzType="primary">
+            + Create Position
+          </button>
+        </div>
+      </div>
+      <div class="body">
+        <div class="table">
+          <nz-table [nzData]="rowData">
+            <thead>
+              <tr>
+                <th *ngFor="let column of colomnData">{{ column.name }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of rowData">
+                <td>{{ row.designation }}</td>
+                <td>{{ row.department }}</td>
+                <td>{{ row.budget }}</td>
+                <td>{{ row.location }}</td>
+                <td>
+                  <p>{{ row.last_updated.name }}</p>
+                  <p class="time">{{ row.last_updated.time }}</p>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </div>
+        <div class="chart"></div>
+      </div>
+    </div>
+  </div>
+</div>

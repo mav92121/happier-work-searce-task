@@ -23,6 +23,6 @@
 
 .underline {
   width: 49px;
-  height: 2px;
-  border: 1px solid #7d7d7d;
+  height: 1px;
+  border-top: 1px solid #7d7d7d;
 }
