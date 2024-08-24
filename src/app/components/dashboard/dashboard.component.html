@@ -1,0 +1,36 @@
+<div class="flex main">
+  <app-sidebar-layout></app-sidebar-layout>
+  <div class="flex-col">
+    <app-header-layout></app-header-layout>
+    <div class="dashboard">
+      <div class="nav">
+        <h2 class="heading text_dark_blue">Planning Projects</h2>
+        <button class="add_button" nz-button nzType="primary">+</button>
+      </div>
+      <div class="body">
+        <div *ngFor="let project of planningProjects" class="card">
+          <div class="card_header">
+            <h3 class="card_title text_dark_blue">
+              Project : {{ project.name }}
+            </h3>
+            <p class="text_color_gray">{{ project.description }}</p>
+          </div>
+          <div class="card_body">
+            <div class="item_body">
+              <p class="bold">Budget</p>
+              <p class="text_color_gray">{{ project.budget }}</p>
+            </div>
+            <div class="item_body">
+              <p class="bold">Total No. of Positions</p>
+              <p class="text_color_gray">{{ project.total_positons }}</p>
+            </div>
+            <div class="item_body">
+              <p class="bold">Co-planners</p>
+              <p class="text_color_gray">{{ project.co_planners }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

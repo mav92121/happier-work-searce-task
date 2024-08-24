@@ -1,0 +1,11 @@
+.header {
+  height: 8vh;
+  box-sizing: content-box;
+  background-color: white;
+  /* padding: 20px; */
+  border-bottom: 1px solid #dee1e6;
+  width: 92vw;
+  display: flex;
+  align-items: center;
+  padding-left: 2vw;
+}
