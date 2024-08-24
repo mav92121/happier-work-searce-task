@@ -5,7 +5,14 @@
     <div class="dashboard">
       <div class="nav">
         <h2 class="heading text_dark_blue">Planning Projects</h2>
-        <button class="add_button" nz-button nzType="primary">+</button>
+        <button
+          (click)="isModalVisible = true"
+          class="add_button"
+          nz-button
+          nzType="primary"
+        >
+          +
+        </button>
       </div>
       <div class="body">
         <div *ngFor="let project of planningProjects" class="card">
@@ -30,6 +37,74 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="modal">
+        <ng-template #modalFooter>
+          <button
+            class="create_button"
+            nz-button
+            nzType="primary"
+            (click)="createProject()"
+          >
+            Create
+          </button>
+        </ng-template>
+        <nz-modal
+          [(nzVisible)]="isModalVisible"
+          nzTitle="Create Planning Project"
+          (nzOnCancel)="isModalVisible = false"
+          [nzFooter]="modalFooter"
+        >
+          <ng-container *nzModalContent>
+            <form nzLayout="vertical" nz-form>
+              <nz-form-item class="form_item">
+                <nz-form-label class="form_label" nzFor="projectName"
+                  >Project Name</nz-form-label
+                >
+                <nz-form-control>
+                  <input
+                    class="input_box"
+                    placeholder="Enter project name"
+                    nz-input
+                    name="projectName"
+                    id="projectName"
+                    [(ngModel)]="projectName"
+                  />
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item class="form_item">
+                <nz-form-label class="form_label" nzFor="description"
+                  >Project Description</nz-form-label
+                >
+                <nz-form-control>
+                  <input
+                    class="input_box"
+                    placeholder="Enter description"
+                    nz-input
+                    name="description"
+                    id="description"
+                    [(ngModel)]="description"
+                  />
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item class="form_item">
+                <nz-form-label class="form_label" nzFor="coPlanners"
+                  >Co-planner</nz-form-label
+                >
+                <nz-form-control>
+                  <input
+                    class="input_box"
+                    placeholder="Add any co-planners"
+                    nz-input
+                    name="coPlanners"
+                    id="coPlanners"
+                    [(ngModel)]="coPlanners"
+                  />
+                </nz-form-control>
+              </nz-form-item>
+            </form>
+          </ng-container>
+        </nz-modal>
       </div>
     </div>
   </div>

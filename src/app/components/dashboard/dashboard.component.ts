@@ -3,6 +3,9 @@ import { SidebarLayoutComponent } from '../sidebar-layout/sidebar-layout.compone
 import { HeaderLayoutComponent } from '../header-layout/header-layout.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { CommonModule } from '@angular/common';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { FormGroup, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,11 +15,19 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     HeaderLayoutComponent,
     NzButtonModule,
+    NzModalModule,
+    NzFormModule,
+    FormsModule,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
+  isModalVisible = false;
+  projectName = '';
+  description = '';
+  coPlanners = '';
+
   planningProjects = [
     {
       name: 'Asia Expansion',
@@ -40,4 +51,18 @@ export class DashboardComponent {
       co_planners: 'Yash Mehta',
     },
   ];
+
+  createProject(): void {
+    this.planningProjects.push({
+      name: this.projectName,
+      description: this.description,
+      budget: '1.2 Cr',
+      total_positons: 45,
+      co_planners: this.coPlanners,
+    });
+    this.projectName = '';
+    this.description = '';
+    this.coPlanners = '';
+    this.isModalVisible = false;
+  }
 }
