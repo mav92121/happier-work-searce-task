@@ -42,8 +42,17 @@
                 <td>{{ row.budget }}</td>
                 <td>{{ row.location }}</td>
                 <td>
-                  <p>{{ row.last_updated.name }}</p>
-                  <p class="time">{{ row.last_updated.time }}</p>
+                  <div class="flex last_updated">
+                    <div>
+                      <p>{{ row.last_updated.name }}</p>
+                      <p class="time">{{ row.last_updated.time }}</p>
+                    </div>
+                    <div>
+                      <mat-icon [ngStyle]="{ cursor: 'pointer' }"
+                        >delete_outline</mat-icon
+                      >
+                    </div>
+                  </div>
                 </td>
               </tr>
             </tbody>

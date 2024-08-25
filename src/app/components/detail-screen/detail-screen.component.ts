@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { SidebarLayoutComponent } from '../sidebar-layout/sidebar-layout.component';
 import { HeaderLayoutComponent } from '../header-layout/header-layout.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -57,6 +57,86 @@ export class DetailScreenComponent {
       location: 'Ahmedabad',
       last_updated: {
         name: 'Ankush Mehta',
+        time: 'Sep 6 2022, 7.05pm',
+      },
+    },
+    {
+      designation: 'UI designer',
+      department: 'Product',
+      budget: '10L',
+      location: 'Ahmedabad',
+      last_updated: {
+        name: 'Ankush Mehta',
+        time: 'Sep 6 2022, 7.05pm',
+      },
+    },
+    {
+      designation: 'UI designer',
+      department: 'Product',
+      budget: '10L',
+      location: 'Ahmedabad',
+      last_updated: {
+        name: 'Rhea Kapoor',
+        time: 'Sep 6 2022, 7.05pm',
+      },
+    },
+    {
+      designation: 'Architech',
+      department: 'Engineering',
+      budget: '10L',
+      location: 'Ahmedabad',
+      last_updated: {
+        name: 'Ankush Mehta',
+        time: 'Sep 6 2022, 7.05pm',
+      },
+    },
+    {
+      designation: 'Programmer Analyst',
+      department: 'Engineering',
+      budget: '8L',
+      location: 'Ahmedabad',
+      last_updated: {
+        name: 'Ankush Mehta',
+        time: 'Sep 6 2022, 7.05pm',
+      },
+    },
+    {
+      designation: 'Chief Legal Officer',
+      department: 'Others',
+      budget: '26L',
+      location: 'Ahmedabad',
+      last_updated: {
+        name: 'Ankush Mehta',
+        time: 'Sep 6 2022, 7.05pm',
+      },
+    },
+    {
+      designation: 'Vice President',
+      department: 'Product',
+      budget: '35L',
+      location: 'Ahmedabad',
+      last_updated: {
+        name: 'Rhea Kapoor',
+        time: 'Sep 6 2022, 7.05pm',
+      },
+    },
+    {
+      designation: 'Chief Makkeing Officer',
+      department: 'Product',
+      budget: '21L',
+      location: 'Ahmedabad',
+      last_updated: {
+        name: 'Ankush Mehta',
+        time: 'Sep 6 2022, 7.05pm',
+      },
+    },
+    {
+      designation: 'Program Manager',
+      department: 'Product',
+      budget: '18L',
+      location: 'India',
+      last_updated: {
+        name: 'Rhea Kapoor',
         time: 'Sep 6 2022, 7.05pm',
       },
     },

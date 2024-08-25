@@ -16,6 +16,8 @@
 .nav {
   display: flex;
   align-items: center;
+  margin-top: -155px;
+  margin-bottom: 10px;
   justify-content: left;
   gap: 20px;
   width: 90%;
@@ -33,7 +35,7 @@
 }
 
 .body {
-  height: 70%;
+  height: 65%;
   width: 90%;
   border-radius: 8px;
   display: flex;
@@ -123,6 +125,7 @@
   padding: 0;
   margin-bottom: 20px;
   position: relative;
+  margin-top: -10px;
 }
 .select_container {
   border: none;
@@ -137,12 +140,24 @@
   top: -3px;
   padding: 0;
   font-weight: 500;
+  color: black;
 }
 
 .table {
   width: 65%;
   height: 100%;
+  overflow-y: auto;
+  position: relative;
   background-color: white;
+}
+th {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 10 !important;
+  background-color: #f6f6fb !important;
+}
+.last_updated {
+  gap: 50px;
 }
 
 .chart {
@@ -155,4 +170,7 @@
   font-weight: 400;
   color: #7a869a;
   font-size: 12px;
+}
+.nz-pagination-item {
+  border-color: yellow !important; /* Use your primary color code here */
 }
