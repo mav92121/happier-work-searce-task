@@ -4,7 +4,7 @@
     <app-header-layout></app-header-layout>
     <div class="dashboard">
       <div class="nav">
-        <button class="back_button" nz-button nzType="primary">
+        <button class="back_button" (click)="navigateToDashboard()" nz-button nzType="primary">
           <mat-icon class="arrow_back">arrow_back</mat-icon>
         </button>
         <h2 class="heading text_dark_blue">{{ project.name }}</h2>

@@ -6,11 +6,11 @@
         <div><img src="assets/images/hw_logo.jpg" /></div>
       </div>
       <div class="input_container">
-        <h3 class="heading">Login</h3>
+        <h3 class="heading text_dark_blue">Login</h3>
         <div class="form_container">
           <form nzLayout="vertical" nz-form>
             <nz-form-item>
-              <nz-form-label class="form_label" nzFor="email"
+              <nz-form-label class="form_label text_gray" nzFor="email"
                 >Email ID</nz-form-label
               >
               <nz-form-control>
@@ -18,6 +18,7 @@
                   class="input_box"
                   placeholder="Enter your email ID"
                   nz-input
+                  [(ngModel)]="email"
                   name="email"
                   type="email"
                   id="email"
@@ -33,6 +34,7 @@
                   class="input_box"
                   placeholder="Enter your password"
                   nz-input
+                  [(ngModel)]="password"
                   name="password"
                   type="password"
                   id="password"
@@ -43,7 +45,14 @@
           <!-- <input type="text"> -->
         </div>
       </div>
-      <button class="bg-yellow" nz-button nzType="primary">Login</button>
+      <button
+        class="bg-yellow text_dark_blue"
+        (click)="login()"
+        nz-button
+        nzType="primary"
+      >
+        Login
+      </button>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SidebarLayoutComponent } from '../sidebar-layout/sidebar-layout.component';
 import { HeaderLayoutComponent } from '../header-layout/header-layout.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { FormGroup, FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -64,5 +65,9 @@ export class DashboardComponent {
     this.description = '';
     this.coPlanners = '';
     this.isModalVisible = false;
+  }
+  router = inject(Router);
+  navigteToDetailScreen(project: any): void {
+    this.router.navigate(['/detail_screen'], { state: project });
   }
 }

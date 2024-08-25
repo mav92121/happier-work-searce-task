@@ -17,6 +17,13 @@
 
 .bg-yellow {
   border-radius: 20px;
+  fort-weight: 600 !important;
+}
+.text_dark_blue {
+  color: #091e42;
+}
+.text_gray {
+  color: #465671 !important;
 }
 
 .logo {
@@ -31,8 +38,7 @@
 .heading {
   height: 30px;
   font-weight: 600;
-    font-size: 24px;
-  
+  font-size: 24px;
 }
 .main {
   width: 100%;
@@ -57,5 +63,5 @@
   width: 100%;
 }
 .form_container {
-margin-top: 30px;
+  margin-top: 30px;
 }

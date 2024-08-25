@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, inject } from '@angular/core';
 import { SidebarLayoutComponent } from '../sidebar-layout/sidebar-layout.component';
 import { HeaderLayoutComponent } from '../header-layout/header-layout.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -9,6 +9,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import * as Highcharts from 'highcharts';
 import { NzTableSortOrder } from 'ng-zorro-antd/table';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-detail-screen',
   standalone: true,
@@ -26,13 +27,10 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './detail-screen.component.css',
 })
 export class DetailScreenComponent {
-  project = {
-    name: 'Asia Expansion',
-    description: 'Planning for Asia Expansion',
-    budget: '1.5 Cr',
-    total_positons: 66,
-    co_planners: 'Yash Mehta',
-  };
+  project: any;
+  constructor(private router: Router) {
+    this.project = this.router?.getCurrentNavigation()?.extras.state;
+  }
   colomnData = [
     {
       name: 'Designation',
@@ -155,6 +153,9 @@ export class DetailScreenComponent {
   updateFlag: boolean = false;
   oneToOneFlag: boolean = true;
   runOutsideAngular: boolean = false;
+  navigateToDashboard() {
+    this.router.navigate(['/dashboard']);
+  }
   ngAfterViewInit(): void {
     this.chartOptions = {
       credits: {

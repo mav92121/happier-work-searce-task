@@ -7,7 +7,7 @@
         <h2 class="heading text_dark_blue">Planning Projects</h2>
         <button
           (click)="isModalVisible = true"
-          class="add_button"
+          class="add_button text_dark_blue"
           nz-button
           nzType="primary"
         >
@@ -15,7 +15,11 @@
         </button>
       </div>
       <div class="body">
-        <div *ngFor="let project of planningProjects" class="card">
+        <div
+          *ngFor="let project of planningProjects"
+          class="card"
+          (click)="navigteToDetailScreen(project)"
+        >
           <div class="card_header">
             <h3 class="card_title text_dark_blue">
               Project : {{ project.name }}
@@ -41,7 +45,7 @@
       <div class="modal">
         <ng-template #modalFooter>
           <button
-            class="create_button"
+            class="create_button text_dark_blue"
             nz-button
             nzType="primary"
             (click)="createProject()"
