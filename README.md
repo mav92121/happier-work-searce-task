@@ -16,7 +16,7 @@ Clone the repository to your local machine and navigate to the project directory
 
 ```
 git clone git@github.com:mav92121/happier-work-searce-task.git
-cd happier-work-searce-task.git
+cd happier-work-searce-task
 ```
 
 ## Step 2: Install Dependencies
