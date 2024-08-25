@@ -27,6 +27,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  font-size: 25px;
+  font-weight: 300;
 }
 .body {
   background-color: white;
@@ -88,6 +90,7 @@
   width: 83px;
   height: 34px;
   border-radius: 20px;
+  font-weight: 500;
 }
 .input_box {
   border-width: 1px !important;

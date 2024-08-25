@@ -17,7 +17,8 @@
 
 .bg-yellow {
   border-radius: 20px;
-  fort-weight: 600 !important;
+  font-size: 12px;
+  font-weight: 500 !important;
 }
 .text_dark_blue {
   color: #091e42;
