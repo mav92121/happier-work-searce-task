@@ -1,27 +1,44 @@
 # HappierWork
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Make sure you have the following installed on your system:
 
-## Code scaffolding
+- **Node.js**
+- **npm**
+- **Angular CLI**
+(This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Step 1: Clone the Repository
 
-## Build
+Clone the repository to your local machine and navigate to the project directory:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+git clone git@github.com:mav92121/happier-work-searce-task.git
+cd happier-work-searce-task.git
+```
 
-## Running unit tests
+## Step 2: Install Dependencies
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+npm install
+```
+## Step 3: Run the Development Server
+```
+ng s
+```
+## Step 4: Open the Application in Your Browser
+http://localhost:4200
 
-## Running end-to-end tests
+### Login Credintials 
+CEO:
+ - Email: ceo@gmail.com
+ - Password: 123
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+CFO:
+ - Email: cfo@gmail.com
+ - Password: 123
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
