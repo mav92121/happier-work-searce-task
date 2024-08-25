@@ -7,6 +7,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { CommonModule } from '@angular/common';
 import { HighchartsChartModule } from 'highcharts-angular';
 import * as Highcharts from 'highcharts';
+import { NzTableSortOrder } from 'ng-zorro-antd/table';
 @Component({
   selector: 'app-detail-screen',
   standalone: true,
@@ -187,5 +188,43 @@ export class DetailScreenComponent {
         },
       ],
     };
+  }
+  sortKey: string | null = null;
+  sortOrder: NzTableSortOrder = null;
+
+  sort(columnKey: string): void {
+    if (this.sortKey === columnKey) {
+      this.sortOrder = this.sortOrder === 'ascend' ? 'descend' : 'ascend';
+    } else {
+      this.sortKey = columnKey;
+      this.sortOrder = 'ascend';
+    }
+    this.rowData = this.sortData(this.rowData, columnKey, this.sortOrder);
+  }
+
+  sortData(data: any[], key: string, order: NzTableSortOrder): any[] {
+    return data.sort((a, b) => {
+      let valA = a[key];
+      let valB = b[key];
+
+      if (key === 'last_updated') {
+        valA = a.last_updated?.name ?? '';
+        valB = b.last_updated?.name ?? '';
+      }
+      if (key === 'budget') {
+        valA = this.convertToNumber(valA);
+        valB = this.convertToNumber(valB);
+      }
+
+      if (order === 'ascend') {
+        return valA > valB ? 1 : -1;
+      } else if (order === 'descend') {
+        return valA < valB ? 1 : -1;
+      }
+      return 0;
+    });
+  }
+  convertToNumber(value: string): number {
+    return parseFloat(value.replace('L', '').trim());
   }
 }

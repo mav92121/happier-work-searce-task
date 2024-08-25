@@ -28,11 +28,70 @@
         </div>
       </div>
       <div class="body">
+        <!-- <div class="table">
+          <nz-table [nzData]="rowData">
+            <thead>
+              <tr>
+                <th
+                  *ngFor="let column of colomnData"
+                  (click)="sort(column.key)"
+                >
+                  {{ column.name }}
+                  <span *ngIf="sortKey === column.key">
+                    <i
+                      class="anticon anticon-arrow-up"
+                      *ngIf="sortOrder === 'ascend'"
+                    ></i>
+                    <i
+                      class="anticon anticon-arrow-down"
+                      *ngIf="sortOrder === 'descend'"
+                    ></i>
+                  </span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of rowData">
+                <td>{{ row.designation }}</td>
+                <td>{{ row.department }}</td>
+                <td>{{ row.budget }}</td>
+                <td>{{ row.location }}</td>
+                <td>
+                  <div class="flex last_updated">
+                    <div>
+                      <p>{{ row.last_updated.name }}</p>
+                      <p class="time">{{ row.last_updated.time }}</p>
+                    </div>
+                    <div>
+                      <mat-icon [ngStyle]="{ cursor: 'pointer' }"
+                        >delete_outline</mat-icon
+                      >
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </div> -->
         <div class="table">
           <nz-table [nzData]="rowData">
             <thead>
               <tr>
-                <th *ngFor="let column of colomnData">{{ column.name }}</th>
+                <th
+                  *ngFor="let column of colomnData"
+                  (click)="sort(column.key)"
+                  [ngClass]="{ sortable: true }"
+                >
+                  {{ column.name }}
+                  <span *ngIf="sortKey === column.key">
+                    <mat-icon *ngIf="sortOrder === 'ascend'" class="sort-icon"
+                      >arrow_upward</mat-icon
+                    >
+                    <mat-icon *ngIf="sortOrder === 'descend'" class="sort-icon"
+                      >arrow_downward</mat-icon
+                    >
+                  </span>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -58,6 +117,7 @@
             </tbody>
           </nz-table>
         </div>
+
         <div class="chart">
           <div class="chart_heading">
             <h3 class="text_dark_blue budget_title">Budget</h3>
