@@ -171,6 +171,46 @@ th {
   color: #7a869a;
   font-size: 12px;
 }
-.nz-pagination-item {
-  border-color: yellow !important; /* Use your primary color code here */
+.chart_heading {
+  padding-left: 20px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.budget_title {
+  font-weight: 700;
+}
+.edit_link {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  font-style: italic;
+  color: #ffb414;
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #ececec;
+}
+.chart_info {
+  display: flex;
+}
+.item {
+  margin-top: 20px;
+  display: flex;
+  gap: 125px;
+  font-weight: 700;
+  justify-content: space-between;
+}
+.values {
+  font-weight: 600;
+}
+.chart_main {
+  display: flex;
+  align-items: center;
+}
+.center {
+  margin: auto;
 }

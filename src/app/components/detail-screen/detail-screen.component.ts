@@ -5,6 +5,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { MatIconModule } from '@angular/material/icon';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { CommonModule } from '@angular/common';
+import { HighchartsChartModule } from 'highcharts-angular';
+import * as Highcharts from 'highcharts';
 @Component({
   selector: 'app-detail-screen',
   standalone: true,
@@ -15,6 +17,7 @@ import { CommonModule } from '@angular/common';
     MatIconModule,
     NzTableModule,
     CommonModule,
+    HighchartsChartModule,
   ],
   templateUrl: './detail-screen.component.html',
   styleUrl: './detail-screen.component.css',
@@ -141,4 +144,48 @@ export class DetailScreenComponent {
       },
     },
   ];
+  Highcharts: typeof Highcharts = Highcharts;
+  chartConstructor: string = 'chart';
+  chartOptions: Highcharts.Options = {};
+  chartCallback: Highcharts.ChartCallbackFunction = function (chart) {};
+  updateFlag: boolean = false;
+  oneToOneFlag: boolean = true;
+  runOutsideAngular: boolean = false;
+  ngAfterViewInit(): void {
+    this.chartOptions = {
+      credits: {
+        enabled: false,
+      },
+      chart: {
+        type: 'pie',
+      },
+      title: {
+        text: '',
+      },
+      plotOptions: {
+        pie: {
+          size: '60%',
+          innerSize: '80%',
+          depth: 45,
+          dataLabels: {
+            enabled: false,
+          },
+          showInLegend: true,
+        },
+      },
+      series: [
+        {
+          type: 'pie',
+          name: 'Budget used',
+          data: [
+            ['Engineering', 40],
+            ['Product', 20],
+            ['Sales', 30],
+            ['Others', 10],
+          ],
+          colors: ['#489e9f', '#81cb85', '#ffc74f', '#70b0b1'],
+        },
+      ],
+    };
+  }
 }
