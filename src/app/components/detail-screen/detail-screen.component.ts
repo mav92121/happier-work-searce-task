@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { HighchartsChartModule } from 'highcharts-angular';
 import * as Highcharts from 'highcharts';
 import { NzTableSortOrder } from 'ng-zorro-antd/table';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-detail-screen',
   standalone: true,
@@ -19,6 +20,7 @@ import { NzTableSortOrder } from 'ng-zorro-antd/table';
     NzTableModule,
     CommonModule,
     HighchartsChartModule,
+    FormsModule,
   ],
   templateUrl: './detail-screen.component.html',
   styleUrl: './detail-screen.component.css',
@@ -53,7 +55,7 @@ export class DetailScreenComponent {
       key: 'last_updated',
     },
   ];
-  rowData = [
+  initialRowData = [
     {
       designation: 'HR',
       department: 'Others',
@@ -145,6 +147,7 @@ export class DetailScreenComponent {
       },
     },
   ];
+  rowData = this.initialRowData;
   Highcharts: typeof Highcharts = Highcharts;
   chartConstructor: string = 'chart';
   chartOptions: Highcharts.Options = {};
@@ -191,6 +194,8 @@ export class DetailScreenComponent {
   }
   sortKey: string | null = null;
   sortOrder: NzTableSortOrder = null;
+  filterOn = 'designation';
+  filterValue = '';
 
   sort(columnKey: string): void {
     if (this.sortKey === columnKey) {
@@ -226,5 +231,32 @@ export class DetailScreenComponent {
   }
   convertToNumber(value: string): number {
     return parseFloat(value.replace('L', '').trim());
+  }
+  filterData(filterOn: string, filterValue: string): void {
+    if (filterValue === '') {
+      this.rowData = this.initialRowData;
+      return;
+    }
+    this.rowData = this.initialRowData.filter((row) => {
+      if (filterOn === 'designation') {
+        return row.designation
+          .toLowerCase()
+          .includes(filterValue.toLowerCase());
+      } else if (filterOn === 'department') {
+        return row.department.toLowerCase().includes(filterValue.toLowerCase());
+      } else if (filterOn === 'budget') {
+        return row.budget.toLowerCase().includes(filterValue.toLowerCase());
+      } else if (filterOn === 'location') {
+        return row.location.toLowerCase().includes(filterValue.toLowerCase());
+      } else if (filterOn === 'last_updated') {
+        return row.last_updated.name
+          .toLowerCase()
+          .includes(filterValue.toLowerCase());
+      }
+      return false;
+    });
+  }
+  applyFilter(): void {
+    this.filterData(this.filterOn, this.filterValue);
   }
 }
