@@ -4,7 +4,12 @@
     <app-header-layout></app-header-layout>
     <div class="dashboard">
       <div class="nav">
-        <button class="back_button" (click)="navigateToDashboard()" nz-button nzType="primary">
+        <button
+          class="back_button"
+          (click)="navigateToDashboard()"
+          nz-button
+          nzType="primary"
+        >
           <mat-icon class="arrow_back">arrow_back</mat-icon>
         </button>
         <h2 class="heading text_dark_blue">{{ project.name }}</h2>
@@ -82,6 +87,13 @@
           <div class="chart_heading">
             <h3 class="text_dark_blue budget_title">Budget</h3>
             <h4 class="edit_link">Edit</h4>
+          </div>
+          <div class="chart_content">
+            <div class="chart_title">1.5 Cr</div>
+            <div class="chart_label">Used</div>
+            <div class="chart_positions">
+              {{ project.total_positons }} Positions
+            </div>
           </div>
           <div class="chart_main">
             <highcharts-chart

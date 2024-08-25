@@ -169,7 +169,7 @@ export class DetailScreenComponent {
       },
       plotOptions: {
         pie: {
-          size: '60%',
+          size: '100%',
           innerSize: '80%',
           depth: 45,
           dataLabels: {

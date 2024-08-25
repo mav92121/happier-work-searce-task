@@ -34,7 +34,7 @@ export class DashboardComponent {
       name: 'Asia Expansion',
       description: 'Planning for Asia Expansion',
       budget: '1.5 Cr',
-      total_positons: 66,
+      total_positons: 56,
       co_planners: 'Yash Mehta',
     },
     {
@@ -48,7 +48,7 @@ export class DashboardComponent {
       name: 'Growth 2024',
       description: 'Planning for Growth 2024',
       budget: '1.5 Cr',
-      total_positons: 66,
+      total_positons: 76,
       co_planners: 'Yash Mehta',
     },
   ];
